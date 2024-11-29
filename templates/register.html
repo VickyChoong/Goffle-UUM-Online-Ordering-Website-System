@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link href="{{ url_for('static', filename='css/pageForm.css') }}" rel="stylesheet">
+</head>
+<body style="background-color: rgba(0,0,0,0.1)">
+<div id="main-wrapper" data-aos="fade-right" class="container">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-3">
+                                    <h3 class="h4 font-weight-bold text-theme">Register</h3>
+                                </div>
+
+                                <h6 class="h5 mb-0">Get Your Free Account!</h6>
+                                <p class="text-muted mt-2 mb-5">Keep up with all of our latest product and promotion
+                                    information by just signing up.</p>
+
+                                <form action='{{ url_for("addUser") }}' method='POST' id="register">
+                                    <input type="hidden" value="{{phoneNoList}}" id="phoneNoList">
+                                    <input type="hidden" value="{{usernamesList}}" id="usernamesList">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone No</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">+60</span>
+                                            </div>
+                                            <input type="tel" class="form-control" id="phone" name="phone"
+                                                   pattern="^(?!60|(\+60)|1-)[1][02-46-9]-*[0-9]{7}$|^(?!60|(\+60)|1-)[1][1]-*[0-9]{8}$"
+                                                   required>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               required>
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label for="password">Retype Password</label>
+                                        <input type="password" class="form-control" id="confirm_password" required>
+                                        <span id='message' class="m-0 p-0" style="font-size: 15px">&nbsp</span>
+                                    </div>
+                                    <button type="submit" class="btn btn-theme">Register</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 d-none d-lg-inline-block order-lg-first">
+                            <div class="account-block"
+                                 style="background-image: url('{{ url_for('static', filename='images/register.png') }}');">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <h4 class="text-white mb-4">Join Us Today!</h4>
+                                    <p class="lead text-white">"Life is too short to wonder where you hid your waffle
+                                        maker."</p>
+                                    <p>- Paula Deen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+
+            <p class="text-muted text-center mt-3 mb-0">Have an existing account? <a href="login"
+                                                                                     class="link ml-1">Login</a>
+            </p>
+
+            <!-- end row -->
+
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- Row -->
+</div>
+
+<a href="/" class="corner-icon d-flex align-items-center justify-content-center"><i class="bi bi-arrow-return-left"></i></a>
+
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>

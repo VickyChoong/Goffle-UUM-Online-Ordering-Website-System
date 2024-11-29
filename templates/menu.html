@@ -1,0 +1,2417 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Menu</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Files -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link href="{{ url_for('static', filename='css/form.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<!--Top Bar-->
+<div data-aos="fade-in"></div>
+<section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex justify-content-center justify-content-md-between">
+        <div class="social-links d-none d-md-flex align-items-center">
+            <a href="https://www.facebook.com/profile.php?id=100091146773999&mibextid=ZbWKwL" class="facebook"><i
+                    class="bi bi-facebook" style="color: white; opacity: 0.9;"></i></a>
+            <a href="https://www.instagram.com/goffle2023/?igshid=YmMyMTA2M2Y%3D" class="instagram"><i
+                    class="bi bi-instagram" style="color: white; opacity: 0.9;"></i></a>
+            <a href="https://chat.whatsapp.com/B69jr61MZwULyUW74mWem5" class="social-links"><i class="bi bi-whatsapp"
+                                                                                               style="color: white; opacity: 0.9;"></i></a>
+        </div>
+         <div class="align-items-end me-0 ms-auto">
+            <a href="history" class="btn btn-primary bg-transparent border-0 ms-auto me-0 px-0"><i class="fa fa-history"
+                                                                                           style="color: orange;"></i></a>
+            <a href="cart" class="btn btn-primary bg-transparent border-0 me-2"><i class="bi bi-cart-fill"
+                                                                                           style="color: orange;"></i></a>
+            {% if 'username' in session %}
+            <a href="logout" id="loginBtn"
+               class="btn bg-orange btn-sm rounded-pill border-1 text-white px-3">
+                Sign Out
+            </a>
+            {% else %}
+            <a href="login" class="btn bg-orange btn-sm rounded-pill border-1 text-white px-3">
+                Login
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- End Top Bar -->
+<header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="#" class="logo d-flex align-items-center">
+            <img src="{{ url_for('static', filename='images/menu/logo.png') }}" width="70" alt="">
+            <h1 style="color: orange">Goffle<span class="color-white">Butter up and smile!</span></h1>
+        </a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="/" style="color: white; opacity: 0.8;">Home</a></li>
+                <li><a href="#" class="active" style="color: white; opacity: 0.8;">Menu</a></li>
+                <li><a href="blog" style="color: white; opacity: 0.8;">Blog</a></li>
+            </ul>
+        </nav><!-- .navbar -->
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero">
+
+    <img src="{{ url_for('static', filename='images/menu/bannerMenu2.png') }}" data-aos="fade-in">
+
+</section>
+<!-- End Hero Section -->
+
+<!--Hero Slider-->
+<section id="hero-slider" class="hero-slider bg-white pt-5">
+
+    <div class="container-md">
+        <div class="section-header" data-aos="fade-up">
+            <h2>Promotion</h2>
+            <p>Hurry and take advantage of our exciting promotion, offering incredible deals and discounts on a wide
+                range of products</p>
+        </div>
+        <div class="row d-flex justify-content-center" data-aos="zoom-in">
+            <div class="col-11.5">
+                <div class="swiper sliderFeaturedPosts">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="" onclick="return false" class="img-bg d-flex align-items-end"
+                               style="background-image: url({{ url_for('static', filename='images/menu/slide1.png') }});; background-size: cover; background-position: center">
+                                <div class="img-bg-inner ">
+                                    <h2>Get 1 Free Ice Cream with Just A Few Simple Steps</h2>
+                                    <p>
+                                        To be eligible for a free ice cream in any flavor from us, simply spend RM7 or
+                                        more on any product, follow us on Instagram @Goffle2023, and tag us in your
+                                        Instagram story!
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="" onclick="return false" class="img-bg d-flex align-items-end"
+                               style="background-image: url({{ url_for('static', filename='images/menu/slide2.png') }});">
+                                <div class="img-bg-inner">
+                                    <h2>50 Cups of Free Beverages Available Right Now</h2>
+                                    <p>Purchase any waffle from us now and you will actually be qualified to get 1 free
+                                        drink!
+                                        The opportunity will only be available to the first fifty customers. Be
+                                        Quick!
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="custom-swiper-button-next">
+                        <span class="bi-chevron-right"></span>
+                    </div>
+                    <div class="custom-swiper-button-prev">
+                        <span class="bi-chevron-left"></span>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Hero Slider-->
+
+<!--Product Carousel-->
+<section id="products" class="ftco-section pt-5" style="background-color: rgba(var(--color-gray-rgb), 0.075);">
+    <div class="container">
+        <div class="row">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Waffles</h2>
+                <p>Indulge in the irresistible delight of our delectable waffles and savor every bite of perfection.</p>
+            </div>
+            <div class="col-md-12" data-aos="zoom-in">
+                <div class="featured-carousel owl-carousel">
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/choco_waffle.png') }});">
+                                <a href="#chocoModal" data-bs-target="#chocoModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Chocolate Waffle</a></h3>
+                                <span>RM 4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/peanut_butter.png') }});">
+                                <a href="#peanutModal" data-bs-target="#peanutModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Peanut Butter Waffle</a></h3>
+                                <span>RM 4.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/ice_cream_waffle.png') }});">
+                                <a href="#iceCreamModal" data-bs-target="#iceCreamModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Ice Cream Waffle</a></h3>
+                                <span>RM 5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/blue_berry.png') }});">
+                                <a href="#blueBerryModal" data-bs-target="#blueBerryModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Blueberry Waffle</a></h3>
+                                <span>RM 4.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/sandwich_waffle.png') }});">
+                                <a href="#sandwichModal" data-bs-target="#sandwichModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Sandwich Waffle</a></h3>
+                                <span>RM 2.00 (plain)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img d-flex align-items-center justify-content-center rounded"
+                                 style="background-image: url({{ url_for('static', filename='images/menu/mix_flavour.png') }});">
+                                <a href="#mixFlavorModal" data-bs-target="#mixFlavorModal" data-bs-toggle="modal"
+                                   class="icon d-flex align-items-center justify-content-center">
+                                    <span class="ion-ios-search"></span>
+                                </a>
+                            </div>
+                            <div class="text pt-3 w-100 text-center">
+                                <h3><a href="#">Mixed Flavor Waffle</a></h3>
+                                <span>RM 4.20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Product Carousel-->
+
+<!--Set-->
+<section id="parallax" class="parallax">
+
+    <img src="{{ url_for('static', filename='images/menu/set1.png') }}" alt="">
+
+    <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-xl-10">
+                <div class="text-center">
+                    <h3>Budget Set</h3>
+                    <p>Enjoy our wallet-friendly budget set, including mouthwatering waffles paired with fresh lettuce,
+                        savory sausage, and a refreshing drink of your choice.</p>
+                    <a href="#budgetModal" data-bs-target="#budgetModal" data-bs-toggle="modal" class="cta-btn">Order
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Set-->
+
+<!--Side Product-->
+<div class="container-fluid side-product side-products pt-5 ps-0 pe-0 pb-5">
+    <div class="section-header" data-aos="fade-up">
+        <h2>Beverages & Ice Creams</h2>
+        <p>Quench your thirst and satisfy your sweet cravings with our delightful selection of refreshing beverages and
+            indulgent ice creams.</p>
+    </div>
+    <div id="ice-creams" class="row side-product-item g-0 p-0 m-0" data-aos="zoom-in">
+        <div class="col-md-5 p-0">
+            <div class="d-flex align-items-center h-100 w-100" style="background-size: contain!important;">
+                <img src="{{ url_for('static', filename='images/menu/ice_cream1.png') }}" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="col-md-7 m-0 py-5 pe-5  d-flex align-items-center">
+            <div class="row gy-0  h-100 pe-5 d-flex align-items-center">
+                <div class="col-md-11" data-aos="fade-up" data-aos-delay="200" style="padding-left: 100px">
+                    <h3>Ice Cream</h3>
+                    <p>Discover a symphony of ice cream flavors that tickle your senses and ignite your cravings. Dive
+                        into a universe of frozen delights where each scoop unveils a world of excitement and
+                        indulgence.</p>
+                    <ul>
+                        <li><i class="bi bi-check color-orange"></i>
+                            <span>Chocolate flavour</span></li>
+                        <li>
+                            <i class="bi bi-check color-orange"></i><span> Strawberry flavour</span>
+                        </li>
+                        <li><i class="bi bi-check color-orange"></i>
+                            <span>Vanilla flavour</span>
+                        </li>
+                    </ul>
+                    <a href="#iceCreamsModal" data-bs-target="#iceCreamsModal" data-bs-toggle="modal"
+                       class="btn btn-more-info align-self-start fw-bold">MORE INFO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="beverages" class="row side-product-item g-0 p-0 m-0">
+        <div class="col-md-5 p-0" data-aos="zoom-in">
+            <div class="menu-image d-flex align-items-center justify-content-center h-100 w-100">
+                <img src="{{ url_for('static', filename='images/menu/beverage.png') }}" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-md-7 p-0 order-md-first order-sm-last" data-aos="fade-up">
+            <div class="row gy-0  h-100" style="padding: 100px 100px 20px 0;">
+                <div class="col-md-11" data-aos="fade-up" data-aos-delay="200" style="padding-left: 100px">
+                    <h3>Beverage</h3>
+                    <p>Embark on a tantalizing journey through a world of diverse beverages, where each sip unveils a
+                        unique experience. From the vibrant hues that entice your eyes to the aromatic symphony that
+                        captivates your senses, every drink tells a story waiting to be discovered. </p>
+                    <a href="#beverageModal" data-bs-target="#beverageModal" data-bs-toggle="modal"
+                       class="btn btn-more-info align-self-start fw-bold">MORE INFO</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--End Side Product-->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a href="index" class="logo d-flex align-items-center">
+                    <span class="color-orange">Goffle</span>
+                </a>
+                <p>Serving up delightful waffle creations, our food company brings the perfect blend of heavenly flavors
+                    and crispy goodness to satisfy your taste buds.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href="https://www.facebook.com/profile.php?id=100091146773999&mibextid=ZbWKwL"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/goffle2023/?igshid=YmMyMTA2M2Y%3D"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://chat.whatsapp.com/B69jr61MZwULyUW74mWem5"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="color-orange">Useful Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="color-orange">Our Products</h4>
+                <ul>
+                    <li><a href="#" onclick="scrollToSection(event, 'products')">Waffles</a></li>
+                    <li><a href="#" onclick="scrollToSection(event, 'parallax')">Budget Sets</a></li>
+                    <li><a href="#" onclick="scrollToSection(event, 'ice-creams')">Ice Creams</a></li>
+                    <li><a href="#" onclick="scrollToSection(event, 'beverages')">Beverages</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4 class="color-orange">Contact Us</h4>
+                <p>Linggua Cafe</p>
+                <p>06050 Universiti Utara Malaysia</p>
+                <p>Kedah</p>
+                <p class="mt-4"><strong>Phone 1:</strong> <span>+6011-11161191</span></p>
+                <p><strong>Phone 2:</strong> <span>+6016-4780799</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>&copy; <span>Copyright</span> <strong class="px-1">Goffle</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="corner-icon d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+<div id="chocoModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="1">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Chocolate Waffle</h5>
+                                    <i>Savor the irresistible delight of our signature choco waffle, a symphony of
+                                        chocolatey goodness in every delectable bite.</i>
+                                    <input type="hidden" name="price" value="4">
+                                    <p class="price-tag">
+                                        RM 4.00
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br1" name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br1">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br3"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br2" name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       for="br2">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="4.00">4.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="4.00">4.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/choco_waffle.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="peanutModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="2">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Peanut Butter Waffle</h5>
+                                    <i>Indulge in the heavenly combination of rich and creamy peanut butter on a warm
+                                        and crispy waffle, a delightful treat for your taste buds.</i>
+                                    <input type="hidden" name="price" value="4">
+                                    <p class="price-tag">
+                                        RM 4.00
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br11" name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br11">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br33"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br22" name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       for="br22">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="4.00">4.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="4.00">4.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/peanut_butter.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="iceCreamModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="3">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Ice Cream Waffle</h5>
+                                    <i>Experience the perfect harmony of a golden, fluffy waffle paired with a scoop of
+                                        decadent ice cream, creating a delightful dessert that melts in your mouth.</i>
+                                    <input type="hidden" name="price" value="5">
+                                    <p class="price-tag">
+                                        RM 5.00
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br111" name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br222" name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="5.00">5.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="5.00">5.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/ice_cream_waffle.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="blueBerryModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="4">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Blueberry Waffle</h5>
+                                    <i>
+                                        Indulge in the exquisite flavors of our blueberry-infused waffle, bursting with
+                                        juicy berries and complemented by the perfect balance of sweetness.</i>
+                                    <input type="hidden" name="price" value="4">
+                                    <p class="price-tag">
+                                        RM 4.00
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br1111" name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br1111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br3333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br2222" name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       for="br2222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="4.00">4.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="4.00">4.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/blue_berry.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mixFlavorModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="5">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Mix Flavor Waffle</h5>
+                                    <i>Experience the perfect balance of flavors with our delightful mid-flavor waffle,
+                                        crafted to satisfy your taste buds with every bite.</i>
+                                    <input type="hidden" name="price" value="4.2">
+                                    <p class="price-tag">
+                                        RM 4.20
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br11111" name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br11111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br33333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br33333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br22222"
+                                                       name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br22222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="4.20">4.20</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="4.20">4.20</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/mix_flavour.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sandwichModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="6">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Sandwich Waffle</h5>
+                                    <i>Experience the perfect combination of fluffy waffles and savory fillings with our
+                                        mouthwatering waffle sandwich.</i>
+                                    <input type="hidden" name="price" value="2">
+                                    <p class="price-tag">
+                                        RM 2.00 (Plain)
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br111111"
+                                                       name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br111111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br333333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br333333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br222222"
+                                                       name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br222222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-3 col-sm-3 pt-3">
+                                        <label class="fw-medium">Select Toppings</label>
+                                        <select class="form-select toppingSelect t-toppingSelect"
+                                                aria-label="Default select example"
+                                                multiple style="height: 85px" required name='toppings'>
+                                            <option value="Chicken Slice:2.5">Chicken Slice</option>
+                                            <option value="Lettuce:0.5">Lettuce</option>
+                                            <option value="Scrambled Egg:1.5">Scrambled Egg</option>
+                                            <option value="Sausage:2">Sausage</option>
+                                            <option value="Tomato:0.5">Tomato</option>
+                                            <option value="Cheese:1">Cheese</option>
+                                            <option value="Crab Stick:1.5">Crab Stick</option>
+                                            <option value="Cucumber:0.5">Cucumber</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-3 col-sm-3 pt-3">
+                                        <label class="fw-medium">Sauce</label>
+                                        <select class="form-select sauceSelect" aria-label="Default select example"
+                                                name='sauce'>
+                                            <option selected disabled value="null:0">Select sauce</option>
+                                            <option>Barbeque</option>
+                                            <option>Mayonnaise</option>
+                                            <option>Chili</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="2.00">2.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-3 col-sm-3 pt-3">
+                                        <label class="fw-medium">Select Toppings</label>
+                                        <select class="form-select toppingSelect d-toppingSelect"
+                                                aria-label="Default select example"
+                                                multiple style="height: 85px" name='toppings'>
+                                            <option value="Chicken Slice:2.5">Chicken Slice</option>
+                                            <option value="Lettuce:0.5">Lettuce</option>
+                                            <option value="Scrambled Egg:1.5">Scrambled Egg</option>
+                                            <option value="Sausage:2">Sausage</option>
+                                            <option value="Tomato:0.5">Tomato</option>
+                                            <option value="Cheese:1">Cheese</option>
+                                            <option value="Crab Stick:1.5">Crab Stick</option>
+                                            <option value="Cucumber:0.5">Cucumber</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-3 col-sm-3 pt-3">
+                                        <label class="fw-medium">Sauce</label>
+                                        <select class="form-select sauceSelect" aria-label="Default select example"
+                                                name='sauce' required>
+                                            <option selected disabled value="null:0">Select sauce</option>
+                                            <option>Barbeque</option>
+                                            <option>Mayonnaise</option>
+                                            <option>Chili</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="2.00">2.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/sandwich_waffle.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="budgetModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="7">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Budget Set</h5>
+                                    <i>Experience our irresistible promotion: Delight in a delectable waffle featuring
+                                        flavorful sausage and crisp lettuce, perfectly paired with a complimentary
+                                        beverage.</i>
+                                    <input type="hidden" name="price" value="5.9">
+                                    <p class="price-tag">
+                                        RM 5.90
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br1111111"
+                                                       name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br1111111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br3333333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br3333333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br2222222"
+                                                       name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br2222222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="5.90">5.90</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="5.90">5.90</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/set1.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="iceCreamsModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="8">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Ice Cream</h5>
+                                    <i>Treat yourself to a delightful experience with our tantalizing selection of
+                                        premium ice cream. Immerse your taste buds in the luscious swirls of rich.</i>
+                                    <input type="hidden" name="price" value="1.50">
+                                    <p class="price-tag">
+                                        RM 1.50
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br11111111"
+                                                       name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br11111111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br33333333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br33333333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br22222222"
+                                                       name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br22222222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="1.50">1.50</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="1.50">1.50</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/ice_cream1.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="beverageModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm d-flex container">
+        <div class="d-flex">
+            <div class="modal-content">
+                <form action="{{ url_for('addToCart') }}" style="display: contents" method="POST"
+                      onsubmit="return updatePrices(this)">
+                    <input type="hidden" name="deliveryOption" value="takeaway" class="deliveryOptionInput">
+                    <input type="hidden" name="productId" value="9">
+                    <div class="row gx-0">
+                        <div style="display: contents">
+                            <div class="col-md-6 col-sm-12 px-4">
+                                <div class="modal-header d-inline-block border-0">
+                                    <h5 class="modal-title" style="font-size: 30px;">Beverage</h5>
+                                    <i>Sip on the revitalizing goodness of our handcrafted beverages, carefully blended
+                                        with the finest ingredients to awaken your senses.</i>
+                                    <input type="hidden" name="price" value="2">
+                                    <p class="price-tag">
+                                        RM 2.00
+                                    </p>
+                                    <div class="row gx-0 container-fluid p-0 pb-2 m-0 d-flex">
+
+                                        <div class="btn-group" role="group"
+                                             aria-label="Basic radio toggle button group">
+                                            <div class="col-4 container-fluid d-flex p-0 m-0 my-1">
+                                                <input type="radio" class="btn-check left" id="br111111111"
+                                                       name="btn-radio"
+                                                       autocomplete="off" checked>
+                                                <label class="btn btn-outline-primary btn-left w-100 align-items-center justify-content-center"
+                                                       for="br111111111">
+                                                    <div class="mt-1">Takeaway</div>
+                                                </label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 m-0">
+                                                <input type="radio" class="btn-check" id="br333333333"
+                                                       autocomplete="off" disabled>
+                                                <label class="btn btn-outline-primary w-100" for="br333333333">Order
+                                                    Option</label>
+                                            </div>
+
+                                            <div class="col-4 container-fluid p-0 d-flex m-0 my-1">
+                                                <input type="radio" class="btn-check right" id="br222222222"
+                                                       name="btn-radio"
+                                                       autocomplete="off">
+                                                <label class="btn btn-outline-primary btn-right w-100  align-items-center justify-content-center"
+                                                       name="btn-radio" for="br222222222">
+                                                    <div class="mt-1">Delivery</div>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row takeaway">
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Receiver Name</label>
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Receiver's name" required>
+                                    </div>
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">+60</span>
+                                            <input type="tel" class="form-control" placeholder="Receiver Phone No."
+                                                   name="phone"
+                                                   pattern="^(?:\+60|60)?(?:\d{1,2}-?\d{7,8}|1\d{2}-?\d{7}|1\d{1}-?\d{8})$"
+                                                   required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time"
+                                                required>
+                                            <option selected disabled value="">Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input t-quantity-input"
+                                               name="quantity"
+                                               required
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="form-group col-10  d-flex justify-content-end">
+                                            <label class="fw-medium" style="margin-top:11px;margin-bottom: 12px;">Total
+                                                Price (RM) :</label>
+                                        </div>
+                                        <div class="form-group col-2 d-flex justify-content-end">
+                                            <input type="hidden" name="totalPrice" value="0.00" class="totalPriceInput">
+                                            <label class="fw-medium totalPriceLabel t-totalPriceLabel"
+                                                   style="margin-top:11px;margin-bottom: 12px;"
+                                                   data-default-value="2">2.00</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-body row delivery">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label class="fw-medium">Area <small class="fw-light" style="font-size: 80%">&nbsp&nbsp(Delivery
+                                            fee may vary depending on location)</small></label>
+                                        <select class="form-select location-select"
+                                                aria-label="Default select example" name="location">
+                                            <option selected disabled value="">Select location for pickup</option>
+                                            <option value="MAS:1">MAS</option>
+                                            <option value="TNB:1">TNB</option>
+                                            <option value="Proton/ Tradewinds:1">Proton/ Tradewinds</option>
+                                            <option value="Vmall/ Uinn/ Maybank:1">Vmall/ Uinn/ Maybank</option>
+                                            <option value="Petronas:1">Petronas</option>
+                                            <option value="Sime Darby:1">Sime Darby</option>
+                                            <option value="TM:1">TM</option>
+                                            <option value="MISC/ BSN:1">MISC/ BSN</option>
+                                            <option value="SME:2">SME</option>
+                                            <option value="Bank Rakyat:2">Bank Rakyat</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-12 pt-3">
+                                        <label class="fw-medium">Additional Note</label>
+                                        <div class="input-group">
+                                            <textarea class="form-control" rows="3" placeholder="Note"
+                                                      name="note"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Time</label>
+                                        <select class="form-select timeSelect" aria-label="Default select example"
+                                                name="time">
+                                            <option selected disabled>Select time for pickup</option>
+                                            <option value="09:00AM - 11:30AM">09:00AM - 10:30AM</option>
+                                            <option value="10:30AM - 12:0OPM">10:30AM - 12:00PM</option>
+                                            <option value="12:00PM - 01:3OPM">12:00PM - 01:30PM</option>
+                                            <option value="01:30PM - 03:0OPM">01:30PM - 03:00PM</option>
+                                            <option value="03:00PM - 04:3OPM">03:00PM - 04:30PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12">
+                                        <label class="fw-medium">Quantity</label>
+                                        <input type="number" class="form-control quantity-input d-quantity-input"
+                                               name="quantity"
+                                               placeholder="1" data-total-price-label="totalPriceLabel"
+                                               value="1"
+                                               step="1"
+                                               min="1" max="10">
+                                    </div>
+
+                                    <div style="display: flex;" class="container mt-3 price-lines">
+                                        <div class="col-10  d-flex justify-content-end">
+                                            <div class="price-line">
+                                                <label class="fw-medium d-flex row justify-content-end">Delivery fee
+                                                    (RM) :</label>
+                                                <label class="fw-medium d-flex row justify-content-end">Total Price (RM)
+                                                    :</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-2">
+                                            <div style="display: contents" class="row d-flex ">
+                                                <input type="hidden" name="totalPrice" value="0.00"
+                                                       class="totalPriceInput">
+                                                <input type="hidden" name="deliveryFee" value="0.00"
+                                                       class="deliveryFee">
+                                                <label
+                                                        class="fw-medium d-flex  justify-content-end col-12 deliveryFeeLabel">0.00</label>
+                                                <label
+                                                        class="fw-medium d-flex justify-content-end col-12 totalPriceLabel d-totalPriceLabel"
+                                                        data-default-value="2.00">2.00</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-dark opacity-75" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="submit" class="btn btn-atc color-white">Add to Cart
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 h-100 order-md-first container-fluid p-0 m-0">
+                            <img src="{{ url_for('static', filename='images/menu/beverage.png') }}"
+                                 class="img-fluid w-100" style="border-radius: 8px; background-size: cover;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor Js Files -->
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap-input-spinner.js') }}"></script>
+
+<!-- Custom JS Files -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+<script src="{{ url_for('static', filename='js/preload.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        preload({{image_paths|tojson|safe}});
+    });
+</script>
+</body>
+</html>

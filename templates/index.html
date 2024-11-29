@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+    <title>Home</title>
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/owl/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS Files -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+</head>
+
+<body>
+<div data-aos="fade-in"></div>
+<section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex justify-content-center justify-content-md-between">
+        <div class="social-links d-none d-md-flex align-items-center">
+            <a href="https://www.facebook.com/profile.php?id=100091146773999&mibextid=ZbWKwL" class="facebook"><i
+                    class="bi bi-facebook" style="color: white; opacity: 0.9;"></i></a>
+            <a href="https://www.instagram.com/goffle2023/?igshid=YmMyMTA2M2Y%3D" class="instagram"><i
+                    class="bi bi-instagram" style="color: white; opacity: 0.9;"></i></a>
+            <a href="https://chat.whatsapp.com/B69jr61MZwULyUW74mWem5" class="social-links"><i class="bi bi-whatsapp"
+                                                                                               style="color: white; opacity: 0.9;"></i></a>
+        </div>
+        <div class="align-items-end me-0 ms-auto">
+            <a href="history" class="btn btn-primary bg-transparent border-0 ms-auto me-0 px-0"><i class="fa fa-history"
+                                                                                           style="color: orange;"></i></a>
+            <a href="cart" class="btn btn-primary bg-transparent border-0 me-2"><i class="bi bi-cart-fill"
+                                                                                           style="color: orange;"></i></a>
+            {% if 'username' in session %}
+            <a href="logout" id="loginBtn"
+               class="btn bg-orange btn-sm rounded-pill border-1 text-white px-3">
+                Sign Out
+            </a>
+            {% else %}
+            <a href="login" class="btn bg-orange btn-sm rounded-pill border-1 text-white px-3">
+                Login
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- End Top Bar -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success show alert-auto-close position-absolute text-center"
+     style="z-index: 11000; left: 0;right: 0" role="alert">
+    <div>{{message}}</div>
+</div>
+
+{% endfor %}
+{% endif %}
+{% endwith %}
+<header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="#" class="logo d-flex align-items-center">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" width="70" alt="">
+            <h1 style="color: orange">Goffle<span class="color-white">Butter up and smile!</span></h1>
+        </a>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="#" class="active" style="color: white; opacity: 0.8;">Home</a></li>
+                <li><a href="menu" style="color: white; opacity: 0.8;">Menu</a></li>
+                <li><a href="blog" style="color: white; opacity: 0.8;">Blog</a></li>
+            </ul>
+        </nav><!-- .navbar -->
+
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+</header>
+
+<section id="hero" class="hero">
+    <img src="{{ url_for('static', filename='images/index/bannerIndex.png') }}" data-aos="fade-in">
+</section>
+
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <p>Goffle stands for the "waffle to go", or to "grab a waffle before you go", aiming to be a tasty fast fix
+                in your hectic academic schedule.</p>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-6">
+                <h3>Our startup's story originated within our campus</h3>
+                <img src="{{ url_for('static', filename='images/index/Launching.png') }}"
+                     class="img-fluid rounded-4 mb-4" alt="" data-aos="zoom-in">
+                <p>We are a group of students from the University of Nottingham Malaysia, who are passionate about
+                    waffles and ice cream. We are also passionate about making the world a better place, and we believe
+                    that the best way to do so is to start with ourselves.</p>
+                <p> We are committed to using only the best
+                    ingredients, and we are committed to making sure that our products are as healthy as possible. We
+                    are also committed to making sure that our products are as affordable as possible, so that everyone
+                    can enjoy them.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="content ps-0 ps-lg-5">
+                    <p class="fst-italic">
+                        Goffle is a vibrant and innovative waffle company dedicated to serving delicious and delightful
+                        waffle creations. Our three primary aims are:
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check-circle-fill color-orange"></i> Quality
+                        </li>
+                        <li><i class="bi bi-check-circle-fill color-orange"></i> Creativity
+                        </li>
+                        <li><i class="bi bi-check-circle-fill color-orange"></i> Customer Satisfaction
+                        </li>
+                    </ul>
+                    <p>
+                        Our mission is to bring joy and indulgence to our customers through our unique and mouthwatering
+                        waffle offerings. <br>Shortly after opening our business, we recognized the growing demand for
+                        convenience and accessibility. That's why we swiftly introduced our delivery service to cater to
+                        our customers.</br>
+                    </p>
+                    <div class="position-relative mt-4">
+                        <img src="{{ url_for('static', filename='images/index/back.png') }}"
+                             class="img-fluid rounded-4" alt="" data-aos="zoom-in">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Us Section -->
+
+
+<!-- Team Section - Home Page -->
+<section id="team" class="team container-fluid" style="background-color: rgba(var(--color-gray-rgb), 0.075);"
+         data-aos="fade-up">
+
+    <!--  Section Title -->
+    <div class="container section-header">
+        <h2>Team</h2>
+        <p>The Goffle team is friendly and welcoming, and they are always happy to help their customers find the perfect
+            waffle to suit their taste.</p>
+    </div><!-- End Section Title -->
+
+    <div class="container-fluid"
+    ">
+
+    <div class="row gy-5">
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+                <img src="{{ url_for('static', filename='images/index/1.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="member-info text-center">
+                <h4>Tan Kai Yee</h4>
+                <span>Chief Executive Officer</span>
+                <p>
+                    Introducing the visionary behind Goffle, the CEO who turns waffles into extraordinary
+                    experiences.</p>
+            </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+                <img src="{{ url_for('static', filename='images/index/2.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="member-info text-center">
+                <h4>Goh Zong Rui</h4>
+                <span>Product Manager</span>
+                <p>Meet our Product Manager, the mastermind behind Goffle's delectable creations, ensuring every
+                    bite is a taste of perfection</p>
+            </div>
+        </div><!-- End Team Member -->
+
+        <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+                <img src="{{ url_for('static', filename='images/index/3.jpg') }}" class="img-fluid" alt="">
+                <div class="social">
+                    <a href="#"><i class="bi bi-twitter color-orange"></i></a>
+                    <a href="#"><i class="bi bi-facebook color-orange"></i></a>
+                    <a href="#"><i class="bi bi-instagram color-orange"></i></a>
+                    <a href="#"><i class="bi bi-linkedin color-orange"></i></a>
+                </div>
+            </div>
+            <div class="member-info text-center">
+                <h4>Jeremy Lee Xin</h4>
+                <span>Chief Finance Officer</span>
+                <p>
+                    Our Chief Finance Officer, the brilliant mind overseeing Goffle's financial strategies and ensuring
+                    our financial health.</p>
+            </div>
+        </div><!-- End Team Member -->
+
+    </div>
+</section><!-- End Team Section -->
+
+<!-- Testimonials Section - Home Page -->
+<section id="testimonials" class="testimonials">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="color-orange">Testimonials</h3>
+                <p>
+                    We are honored to share the heartfelt testimonials of our valued customers, who have experienced the
+                    delightful offerings of Goffle. Their words serve as a testament to the exceptional quality,
+                    delectable flavors, and unparalleled customer service
+                </p>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="swiper">
+                    <template class="swiper-config">
+                        {
+                        "loop": true,
+                        "speed" : 600,
+                        "autoplay": {
+                        "delay": 5000
+                        },
+                        "slidesPerView": "auto",
+                        "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                        }
+                        }
+                    </template>
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="d-flex">
+                                    <img src="{{ url_for('static', filename='images/index/testimonial-1.jpg') }}"
+                                         class="testimonial-img flex-shrink-0" alt="">
+                                    <div>
+                                        <h3>Liana Mustapha</h3>
+                                        <h4>First Major Customer</h4>
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    <span>I stumbled upon Goffle while searching for a delightful treat, and boy, was I pleasantly surprised! The variety of waffles they offer is simply amazing. From classic Belgian waffles to unique and innovative flavors, Goffle has something for every waffle enthusiast. The ordering process was seamless, and the waffles arrived fresh and perfectly packed. Goffle has become my go-to destination for a scrumptious waffle experience!</span>
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="d-flex">
+                                    <img src="{{ url_for('static', filename='images/index/testimonial-2.jpg') }}"
+                                         class="testimonial-img flex-shrink-0" alt="">
+                                    <div>
+                                        <h3>Richmond Chow</h3>
+                                        <h4>Designer</h4>
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    <span>Goffle has redefined my waffle experience entirely! The combination of flavors and toppings they offer is beyond imagination. I never thought a waffle could be so versatile and exciting. From sweet to savory, Goffle has nailed it! The website is intuitive, and the ordering process is a breeze. The best part? The waffles are delivered fresh and hot, just like having them at a premium cafe. Goffle is my newfound waffle paradise!</span>
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="d-flex">
+                                    <img src="{{ url_for('static', filename='images/index/testimonial-3.jpg') }}"
+                                         class="testimonial-img flex-shrink-0" alt="">
+                                    <div>
+                                        <h3>Ah Zianah/h3>
+                                            <h4>Store Owner</h4>
+                                            <div class="stars">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                    class="bi bi-star-fill"></i>
+                                            </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    <span>I've always been a waffle lover, and Goffle has taken my love for waffles to a whole new level! The quality of their waffles is unmatched - light, fluffy, and bursting with flavor. I also appreciate their commitment to using premium ingredients, making each bite a heavenly delight. The website is user-friendly, and I can easily browse through their mouthwatering menu. Goffle is the ultimate destination for waffle enthusiasts like me!</span>
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="d-flex">
+                                    <img src="{{ url_for('static', filename='images/index/testimonial-4.jpg') }}"
+                                         class="testimonial-img flex-shrink-0" alt="">
+                                    <div>
+                                        <h3>Matt Brandon</h3>
+                                        <h4>Freelancer</h4>
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <i class="bi bi-quote quote-icon-left"></i>
+                                    <span>From the moment I took my first bite of Goffle's heavenly waffle, I was transported to a world of pure bliss. The crispy yet fluffy texture, combined with the perfect balance of flavors, left me craving for more.</span>
+                                    <i class="bi bi-quote quote-icon-right"></i>
+                                </p>
+                            </div>
+                        </div><!-- End testimonial item -->
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section><!-- End Testimonials Section -->
+
+<!-- Contact Section - Home Page -->
+<section id="contact" class="contact">
+
+    <!--  Section Title -->
+    <div class="container section-header" data-aos="fade-up">
+        <h2 class="color-orange">Contact</h2>
+        <p>Do check out our cafe in Cafe Hantu (Cafe DKG1) and join us for a delicious waffle today!</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-6">
+
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="200">
+                            <i class="bi bi-geo-alt color-orange"></i>
+                            <h3>Address</h3>
+                            <p>Cafe Hantu (DKG1)</p>
+                            <p>UUM, Sintok, Malaysia</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="500">
+                            <i class="bi bi-clock color-orange"></i>
+                            <h3>Open Hours</h3>
+                            <p>Sunday - Thusday</p>
+                            <p>10:00AM - 05:00PM</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="400">
+                            <i class="bi bi-envelope color-orange"></i>
+                            <h3>Email Us</h3>
+                            <p>goffleuum@gmail.com</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="col-md-6">
+                        <div class="info-item" data-aos="fade" data-aos-delay="300">
+                            <i class="bi bi-telephone color-orange"></i>
+                            <h3>Call Us</h3>
+                            <p>+ 011-1116 1191</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <form action="insertContact" method="post" class="php-email-form" data-aos="fade-up"
+                      data-aos-delay="200">
+                    <div class="row gy-4">
+
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="col-md-6 ">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                        </div>
+
+                        <div class="col-md-12">
+                            <textarea class="form-control" name="message" rows="6" placeholder="Message"
+                                      required></textarea>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                            <button type="submit">Send Message</button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div><!-- End Contact Form -->
+
+        </div>
+
+    </div>
+
+</section><!-- End Contact Section -->
+
+<div id="preloader"></div>
+
+<footer id="footer" class="footer">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-5 col-md-12 footer-about">
+                <a href="#" class="logo d-flex align-items-center">
+                    <span class="color-orange">Goffle</span>
+                </a>
+                <p>Serving up delightful waffle creations, our food company brings the perfect blend of heavenly flavors
+                    and crispy goodness to satisfy your taste buds.</p>
+                <div class="social-links d-flex mt-4">
+                    <a href="https://www.facebook.com/profile.php?id=100091146773999&mibextid=ZbWKwL"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/goffle2023/?igshid=YmMyMTA2M2Y%3D"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://chat.whatsapp.com/B69jr61MZwULyUW74mWem5"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="color-orange">Useful Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="menu">Menu</a></li>
+                    <li><a href="blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-6 footer-links">
+                <h4 class="color-orange">Our Products</h4>
+                <ul>
+                    <li><a href="menu#products">Waffles</a></li>
+                    <li><a href="menu#parallax">Budget Sets</a></li>
+                    <li><a href="menu#ice-creams">Ice Creams</a></li>
+                    <li><a href="menu#beverages">Beverages</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4 class="color-orange">Contact Us</h4>
+                <p>Linggua Cafe</p>
+                <p>06050 Universiti Utara Malaysia</p>
+                <p>Kedah</p>
+                <p class="mt-4"><strong>Phone 1:</strong> <span>+6011-11161191</span></p>
+                <p><strong>Phone 2:</strong> <span>+6016-4780799</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>&copy; <span>Copyright</span> <strong class="px-1">Goffle</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="corner-icon d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor Js Files -->
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+<!-- Custom JS Files -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/preload.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        preload({{image_paths | tojson | safe}});
+    });
+</script>
+</body>
+
+</html>

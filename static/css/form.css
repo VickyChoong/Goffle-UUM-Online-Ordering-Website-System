@@ -1,0 +1,125 @@
+body.modal-open, .modal-open .modal {
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    body.modal-open, .modal-open .modal {
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .modal-dialog {
+        overflow-y: auto;
+        padding-bottom: 30px;
+    }
+}
+
+.modal-backdrop {
+    z-index: 10000!important;
+}
+
+.modal {
+     z-index: 10001!important;
+}
+
+
+.modal-dialog {
+    max-width: max-content!important;
+    max-height: max-content!important;
+}
+
+
+
+.modal-body {
+    display: flex;
+}
+
+
+.modal-body img {
+    object-fit: cover;
+}
+
+.modal-content .modal-header {
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
+.modal-content .modal-header i {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.modal-content .modal-header .price-tag {
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: orange;
+}
+
+.modal .btn-outline-primary {
+    background-color: white;
+    color: lightsalmon;
+    border-color: lightsalmon;
+    border-width: 2px;
+}
+
+.modal .btn-left {
+    border-radius: 5px 0 0 5px;
+}
+
+.modal .btn-right {
+    border-radius: 0 5px 5px 0;
+}
+
+.modal input.btn-check:checked + label.btn-outline-primary {
+    background-color: lightsalmon;
+    font-weight: bold;
+    border-color: orange;
+}
+
+.modal .btn-outline-primary:hover,
+.modal .btn-outline-primary:focus {
+    background-color: rgba(255, 160, 122, 0.7);
+    color: white;
+    border-color: lightsalmon;
+}
+
+.modal input.btn-check:disabled + label.btn-outline-primary {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: darkorange;
+    border-color: lightsalmon;
+    border-width: 1px;
+    color: white;
+    font-weight: bold;
+}
+
+.price-lines {
+    border-top: 1px double gray;
+    border-bottom: 1px double gray;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 .img-fluid {
+        height: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-md-6 .img-fluid {
+        height: auto;
+    }
+}
+
+.btn-atc {
+    color: white;
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-atc:hover {
+    background-color: rgba(var(--color-orange-rgb),0.8);
+}

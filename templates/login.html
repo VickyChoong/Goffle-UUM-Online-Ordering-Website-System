@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link href="{{ url_for('static', filename='css/pageForm.css') }}" rel="stylesheet">
+
+</head>
+<body style="background-color: rgba(0,0,0,0.1)">
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+{% if category == 'success' %}
+<div class="alert alert-success show alert-auto-close text-center"
+     style="z-index: 11000;" role="alert">
+    <div>{{message}}</div>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div id="main-wrapper" class="container" data-aos="fade-left">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="card border-0">
+                <div class="card-body p-0">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="mb-5">
+                                    <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                                </div>
+
+                                <h6 class="h5 mb-0">Welcome back!</h6>
+                                <p class="text-muted mt-2 mb-5">Enter your username and password to access the functions
+                                    of the website.</p>
+
+                                <form action='{{ url_for("login_post") }}' method='POST'>
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" required>
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                               required>
+                                    </div>
+                                    {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                    {% for category, message in messages %}
+                                    {% if category == 'error' %}
+                                    <div class="alert alert-danger show alert-auto-close" role="alert">
+                                        {{message}}
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% endwith %}
+                                    <button type="submit" class="btn btn-theme">Login</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 d-none d-lg-inline-block">
+                            <div class="account-block"
+                                 style="background-image: url('{{ url_for('static', filename='images/login.png') }}');">
+                                <div class="overlay rounded-right"></div>
+                                <div class="account-testimonial">
+                                    <h4 class="text-white mb-4">Login to get your waffle!</h4>
+                                    <p class="lead text-white">"Waffle is just awesome. It's like pancakes with a syrup
+                                        trap."</p>
+                                    <p>- Mitch Hedberg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end card-body -->
+            </div>
+            <!-- end card -->
+
+            <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="register"
+                                                                                  class="link ml-1">register</a>
+            </p>
+
+            <!-- end row -->
+
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- Row -->
+</div>
+
+<a href="/" class="corner-icon d-flex align-items-center justify-content-center"><i class="bi bi-arrow-return-left"></i></a>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+
+</body>
+</html>

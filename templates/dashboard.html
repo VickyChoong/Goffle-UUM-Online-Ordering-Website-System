@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+     <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="{{url_for('static', filename='css/dashboard.css') }}" rel="stylesheet"/>
+
+</head>
+<body class="sb-nav-fixed">
+
+<nav class="sb-topnav navbar navbar-expand navbar-light bg-dark shadow" style="background-color:#f0944c!important;">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" href="#">Goffle</a>
+    <!-- Sidebar Toggle-->
+    <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+            class="fas fa-bars"></i></button>
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
+                   aria-describedby="btnNavbarSearch"/>
+            <button class="btn btn-primary" style="background-color: #ec4b4f; border: #ec4b4f" id="btnNavbarSearch"
+                    type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <!-- Navbar-->
+    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <li class="nav-item dropdown">
+            <a style="color: white" class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false"><i style="color: #ec4b4f" class="fas fa-user fa-fw"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item disabled" style="color: black!important;" href="#!">Hello Admin</a></li>
+                <li><a class="dropdown-item disabled " style="color: black!important;"
+                       href="#!"><i>{{adminName}}</i></a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider"/>
+                </li>
+                <li><a class="dropdown-item" href="login">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion" style="background: rgb(236,75,79);
+background: linear-gradient(0deg, rgba(236,75,79,1) 0%, rgba(240,148,76,1) 100%);">
+            <div class="sb-sidenav-menu">
+                <div class="nav">
+                    <div class="sb-sidenav-menu-heading">Core</div>
+                    <a class="nav-link" href="#">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Dashboard
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Interface</div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
+                       aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                        Layouts
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                         data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="#order">Order</a>
+                            <a class="nav-link" href="#user">User</a>
+                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="#comment">Contact</a>
+                        </nav>
+                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
+                       aria-expanded="false" aria-controls="collapsePages">
+                        <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                        Pages
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                    </a>
+                    <div class="collapse" id="collapsePages" aria-labelledby="headingOne"
+                         data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="login">Login</a>
+                            <a class="nav-link" href="register">Register</a>
+                            <a class="nav-link" href="index">Home</a>
+                            <a class="nav-link" href="menu">Menu</a>
+                            <a class="nav-link" href="blog">Blog</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4"  data-aos="fade-down">
+                <h1 class="mt-4" style="color: orange">Dashboard</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Sections:</li>
+                </ol>
+                <!--                card section-->
+                <div class="row" data-aos="fade-up">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">Order</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link viewDetailsLink" href="#order">View
+                                    Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card text-white mb-4" style="background-color: darkorange">
+                            <div class="card-body">User</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link viewDetailsLink" href="#user">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">Contact</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#contact">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">Comment</div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small text-white stretched-link" href="#comment">View Details</a>
+                                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row border-top" id="order">
+                    <h2 class="mt-4" style="color: orange">Order</h2>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-chart-area me-1" style="color:#ec4b4f!important;"></i>
+                                Sales
+                            </div>
+                            <div class="card-body">
+                                <canvas id="salesChart" width="100%" height="40"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-pie-chart me-1" style="color:#ec4b4f!important;"></i>
+                                Busy Hours
+                            </div>
+                            <div class="card-body">
+                                <canvas id="busyHoursChart" width="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1" style="color:#ec4b4f!important;"></i>
+                        Takeaway & Delivery
+                    </div>
+                    <div class="card-body">
+                        <h5 class="mb-3 text-center" style="color:#ec4b4f!important;"><u>Takeaway Orders</u></h5>
+
+                        <table class="jDataTable orderTable table table-striped nowrap table-responsive-sm"
+                               style="font-size: 12px!important;" cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="text-wrap" style="width: 4%!important;vertical-align:top!important;">Order
+                                    ID
+                                </th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Product ID</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Product Name</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">User ID</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Quantity</th>
+                                <th class="text-wrap" style="width: 8%; vertical-align:top!important;">Total Price</th>
+                                <th class="text-wrap" style="width: 10%; vertical-align:top!important;">Note</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Order Date</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Time Slot</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Toppings</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Sauce</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Receiver Name
+                                </th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Receiver Phone
+                                    No
+                                </th>
+                                <th class="text-end" style="width: 10%; vertical-align:top!important;"><i
+                                        class="bi bi-tools"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for order in takeawayOrders %}
+                            <tr>
+                                <td>{{order.orderId}}</td>
+                                <td>{{order.productId}}</td>
+                                <td class="text-wrap">{{order.productName}}</td>
+                                <td>{{order.userId}}</td>
+                                <td>{{order.quantity}}</td>
+                                <td>{{order.totalPrice}}</td>
+                                <td>{{order.note}}</td>
+                                <td class="text-wrap">{{order.orderDate}}</td>
+                                <td class="text-wrap">{{order.timeSlot}}</td>
+                                <td>{{order.toppings}}</td>
+                                <td>{{order.sauce}}</td>
+                                <td>{{order.receiverName}}</td>
+                                <td>{{order.receiverPhoneNo}}</td>
+                                <td>
+                                    <form method="POST">
+                                        <input type="hidden" name="orderId" value="{{order.orderId}}">
+                                        <button type="button" class="note-btn btn btn-warning  btn-sm me-1" style="color: white!important;"
+                                                data-bs-toggle="modal" data-bs-target="#noteModal"
+                                                data-note="{{order.note}}" data-order-id="{{order.orderId}}">Note
+                                        </button>
+                                        <button type="submit" formaction="processOrder" class="btn btn-primary btn-sm me-1" {% if order.status== 1
+                                                %}disabled{% endif %}>Process</button>
+                                        <button type="submit" formaction="deletePaidOrder" class="delete-btn btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <h5 class="mt-4 mb-3 text-center" style="color:#ec4b4f!important;"><u>Delivery Orders</u></h5>
+                        <table class="jDataTable orderTable table table-striped nowrap table-responsive"
+                               style="font-size: 12px!important;" cellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="text-wrap" style="width: 4%!important;vertical-align:top!important;">Order
+                                    ID
+                                </th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Product ID</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Product Name</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">User ID</th>
+                                <th class="text-wrap" style="width: 4%; vertical-align:top!important;">Quantity</th>
+                                <th class="text-wrap" style="width: 8%; vertical-align:top!important;">Total Price</th>
+                                <th class="text-wrap" style="width: 10%; vertical-align:top!important;">Note</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Order Date</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Time Slot</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Toppings</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Sauce</th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Delivery Fee
+                                </th>
+                                <th class="text-wrap" style="width: 3.5%; vertical-align:top!important;">Location
+                                </th>
+                                <th class="text-end" style="width: 10%; vertical-align:top!important;"><i
+                                        class="bi bi-tools"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for order in deliveryOrders %}
+                            <tr>
+                                <td>{{order.orderId}}</td>
+                                <td>{{order.productId}}</td>
+                                <td class="text-wrap">{{order.productName}}</td>
+                                <td>{{order.userId}}</td>
+                                <td>{{order.quantity}}</td>
+                                <td>{{order.totalPrice}}</td>
+                                <td>{{order.note}}</td>
+                                <td class="text-wrap">{{order.orderDate}}</td>
+                                <td class="text-wrap">{{order.timeSlot}}</td>
+                                <td>{{order.toppings}}</td>
+                                <td>{{order.sauce}}</td>
+                                <td>{{order.deliveryFee}}</td>
+                                <td>{{order.location}}</td>
+                                <td>
+                                    <form method="POST">
+                                        <input type="hidden" name="orderId" value="{{order.orderId}}">
+                                        <button type="button" class="note-btn btn btn-warning btn-sm me-1" style="color: white!important;"
+                                                data-bs-toggle="modal" data-bs-target="#noteModal"
+                                                data-note="{{order.note}}" data-order-id="{{order.orderId}}">Note
+                                        </button>
+                                        <button type="submit" formaction="processOrder" class="btn btn-primary btn-sm me-1" {% if order.status== 1
+                                                %}disabled{% endif %}>Process</button>
+                                        <button type="submit" formaction="deletePaidOrder" class="delete-btn btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row border-top" id="user">
+                    <h2 class="mt-4" style="color: orange">User</h2>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-line-chart me-1" style="color:#ec4b4f!important;"></i>
+                                Accounts Created
+                            </div>
+                            <div class="card-body">
+                                <canvas id="accCreateChart" width="100%" height="40"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-bar-chart me-1" style="color:#ec4b4f!important;"></i>
+                                Users Activity
+                            </div>
+                            <div class="card-body">
+                                <canvas id="userActiveChart" width="100%" height="40"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header" style="color: #ec4b4f!important;">
+                        <i class="fas fa-table me-1"></i>
+                        Accounts
+                    </div>
+                    <div class="card-body">
+                        <table class="jDataTable generalTable table table-striped nowrap table-responsive"
+                               ellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th style="width: 8%; vertical-align:top!important;">User ID</th>
+                                <th style="width: 16%; vertical-align:top!important;">Username</th>
+                                <th style="width: 24%; vertical-align:top!important;">Phone No</th>
+                                <th style="width: 16%; vertical-align:top!important;">Password</th>
+                                <th style="width: 8%; vertical-align:top!important;">Created Date</th>
+                                <th style="width: 8%; vertical-align:top!important;">Last Active</th>
+                                <th class="text-end" style="width: 16%; vertical-align:top!important;"><i
+                                        class="bi bi-tools"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for user in userRecords %}
+                            <tr>
+                                <td>{{user.userId}}</td>
+                                <td>{{user.username}}</td>
+                                <td>{{user.phoneNo}}</td>
+                                <td>{{user.password}}</td>
+                                <td>{{user.createDate}}</td>
+                                <td>{{user.lastActive}}</td>
+                                <td>
+                                    <form action="deleteUser" method="POST">
+                                        <input type="hidden" name="userId" value="{{user.userId}}">
+                                        <button type="button" class="user-btn btn btn-primary btn-sm me-2"
+                                                data-bs-toggle="modal" data-bs-target="#userModal"
+                                                data-username="{{ user.username }}" data-phone="{{ user.phoneNo }}"
+                                                data-password="{{ user.password }}"
+                                                data-user-id="{{ user.userId }}">Edit
+                                        </button>
+                                        <button type="submit" class="delete-btn btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row border-top" id="contact">
+                    <h2 class="mt-4" style="color: orange">Contact</h2>
+                    <div class="col-xl-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="bi bi-cloud-fog2-fill me-1" style="color:#ec4b4f!important;"></i>
+                                Key Words
+                            </div>
+                            <div class="card-body" style="height: 400px!important;">
+                                <canvas id="cloudWordChart" width="100"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header" style="color: #ec4b4f!important;">
+                        <i class="fas fa-table me-1"></i>
+                        Messages
+                    </div>
+                    <div class="card-body">
+                        <table class="jDataTable generalTable table table-striped nowrap table-responsive"
+                               ellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="text-wrap" style="width: 5% !important; vertical-align:top!important;">
+                                    Contact ID
+                                </th>
+                                <th class="text-wrap" style="width: 5%!important; vertical-align:top!important;">Name
+                                </th>
+                                <th class="text-wrap" style="width: 5%!important; vertical-align:top!important;">Email
+                                </th>
+                                <th class="text-wrap" style="width: 15%!important; vertical-align:top!important;">
+                                    Subject
+                                </th>
+                                <th class="text-wrap" style="width:15%!important; vertical-align:top!important;">
+                                    Message
+                                </th>
+                                <th class="text-wrap" style="width:15%!important; vertical-align:top!important;">
+                                    Status
+                                </th>
+                                <th class="text-end" style="width: 15%!important; vertical-align:top!important;"><i
+                                        class="bi bi-tools"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for message in messages %}
+                            <tr>
+                                <td>{{message.id}}</td>
+                                <td>{{message.name}}</td>
+                                <td>{{message.email}}</td>
+                                <td>{{message.subject}}</td>
+                                <td>{{message.message}}</td>
+                                <td>{{message.status}}</td>
+                                <td>
+                                    <form method="POST">
+                                        <input type="hidden" name="contactId" value="{{message.id}}">
+                                        <button type="submit" formaction="processContact"
+                                                class="user-btn btn btn-primary btn-sm me-2" {% if message.status== 1
+                                                %}disabled{% endif %}>Process
+                                        </button>
+                                        <button type="submit" formaction="deleteContact"
+                                                class="delete-btn btn btn-danger btn-sm">Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                 <div class="row border-top" id="comment">
+                    <h2 class="mt-4" style="color: orange">Comment</h2>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header" style="color: #ec4b4f!important;">
+                        <i class="fas fa-table me-1"></i>
+                        Comments for Post
+                    </div>
+                    <div class="card-body">
+                        <table class="jDataTable generalTable table table-striped nowrap table-responsive"
+                               ellspacing="0"
+                               width="100%">
+                            <thead>
+                            <tr>
+                                <th class="text-wrap" style="width: 5% !important; vertical-align:top!important;">
+                                    Comment ID
+                                </th>
+                                <th class="text-wrap" style="width: 5%!important; vertical-align:top!important;">Name
+                                </th>
+                                <th class="text-wrap" style="width: 5%!important; vertical-align:top!important;">Comment
+                                </th>
+                                <th class="text-end" style="width: 15%!important; vertical-align:top!important;"><i
+                                        class="bi bi-tools"></i></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for c in comments %}
+                            <tr>
+                                <td>{{c.id}}</td>
+                                <td>{{c.name}}</td>
+                                <td>{{c.comment}}</td>
+                                <td>
+                                    <form method="POST">
+                                        <input type="hidden" name="commentId" value="{{c.id}}">
+                                        <button type="submit" formaction="deleteComment"
+                                                class="delete-btn btn btn-danger btn-sm">Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-center small">
+                    <div class="text-muted text-center">Copyright &copy; Goffle 2023</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noteModalLabel">Edit Note</h5>
+                <button type="button" class="close bg-transparent border-0" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="noteForm" action="updateOrderNote" method="POST">
+                <div class="modal-body">
+                    <input type="hidden" name="orderId" id="orderIdInput" value="">
+                    <div class="form-group">
+                        <label for="noteInput">Note:</label>
+                        <textarea class="form-control" id="noteInput" name="note" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal to modify user information -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit User</h5>
+                <button type="button" class="close bg-transparent border-0" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="userForm" action="updateUser" method="POST">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                    <label for="phoneNo" class="form-label">Phone No</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">+60</span>
+                        </div>
+                        <input type="tel" class="form-control" id="phoneNo" name="phoneNo"
+                               pattern="^(?!60|(\+60)|1-)[1][02-46-9]-*[0-9]{7}$|^(?!60|(\+60)|1-)[1][1]-*[0-9]{8}$"
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="text" class="form-control" id="password" name="password">
+                    </div>
+                    <input type="hidden" id="userId" name="userId">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.13.5/dataRender/ellipsis.js"
+        crossorigin="anonymous"></script>
+<script src='https://unpkg.com/chart.js@4'></script>
+<script src='https://unpkg.com/chartjs-chart-wordcloud@4'></script>
+
+
+
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='js/dashboard/scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{url_for('static', filename='js/dashboard/datatables-simple-demo.js') }}"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const allOrders = {{allOrders | tojson | safe}};
+        const userRecords = {{userRecords | tojson | safe}}
+        const userActivity = {{userActivity | tojson | safe}}
+        const wordData = {{wordData | tojson | safe}}
+        createAreaChart(allOrders, 'totalPrice', 'Sales', 'orderDate', 'salesChart');
+        createLineChart(userRecords, null, 'Account Created', 'createDate', 'accCreateChart')
+        createPieChart(allOrders, 'quantity', 'Busy Hours Distribution', 'timeSlot', 'busyHoursChart');
+        createBarChart(userActivity, 'Last Active Since x Days ago', 'Number of user', 'userActiveChart')
+        createWordCloud(wordData, 'cloudWordChart')
+    });
+</script>
+</body>
+</html>

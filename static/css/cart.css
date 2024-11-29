@@ -1,0 +1,8 @@
+.table-responsive {
+  max-height: 300px;
+}
+
+thead {
+  position: sticky;
+  top: -1px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}" />
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="{{ url_for('static', filename='css/cart.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/preload.css') }}" rel="stylesheet">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success show alert-auto-close position-absolute text-center"
+     style="z-index: 11000; left: 0;right: 0" role="alert">
+    <div>{{message}}</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<section class="pt-5 pb-5" data-aos="zoom-in" data-aos-delay="1000">
+    <div class="container shadow-lg rounded">
+        <div class="row w-100">
+            <div class="col-lg-12 col-md-12 col-12">
+                <h3 class="mt-2 mb-2 text-center font-weight-bolder fs-1" style="color: orange">Purchase History</h3>
+                <p class="mb-5 text-center">
+                    <i class="font-weight-bold" style="color: darkorange">{{orders | length}}</i> items you have
+                    purchased</p>
+                <div class="table-responsive">
+                    <table id="shoppingCart" class="table table-condensed table-responsive">
+                        <thead style="position:sticky;">
+                        <tr>
+                            <th style="width:5%">ID</th>
+                            <th style="width:65%">Product</th>
+                            <th style="width:10%">Price</th>
+                            <th style="width:10%">Quantity</th>
+                            <th style="width:10%">Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in orders %}
+                        <tr>
+                            <td data-th="Price">{{order.orderId}}</td>
+                            <form action="{{ url_for('deleteCartItem') }}" method="POST">
+                                <input type="hidden" name="unitPrice" value="{{order.unitPrice}}">
+                                <input type="hidden" name='orderId' value='{{order.orderId}}'>
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-md-3 text-left h-100">
+                                            <img src="{{ url_for('static', filename=order.imagePath) }}" alt=""
+                                                 class="img-fluid d-none d-md-block rounded mb-2 shadow w-100"
+                                                 style="height: 150px">
+                                        </div>
+                                        <div class="col-md-9 text-left mt-sm-2">
+                                            <h4>{{order.productName}}</h4>
+                                            <div>
+                                                {% for description in order.description %}
+                                                <span class="small font-weight-light d-inline-block pe-4">{{description}}</span>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">{{order.totalPrice}}</td>
+                                <td data-th="Price">{{order.quantity}}</td>
+                                <td data-th="Price">
+                                    {% if order.status == 1 %}
+                                    Processed
+                                    {% else %}
+                                    Unprocessed
+                                    {% endif %}
+                                </td>
+                            </form>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="float-end text-end">
+                    <h4>Subtotal:</h4>
+                    <h1><span id="totalPrice">RM{{totalPrice}}</span></h1>
+                </div>
+
+            </div>
+        </div>
+        <div class="row mt-4 d-flex align-items-center">
+            <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+                <a href="menu">
+                    <i class="fas fa-arrow-left mr-2"></i> Continue Shopping</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div id="preloader" data-aos="false"></div>
+<script>
+    const imagePaths = {{preloader | tojson | safe}};
+    window.onload = function () {
+        preload(imagePaths);
+    };
+</script>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/preload.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+
+</body>
+</html>

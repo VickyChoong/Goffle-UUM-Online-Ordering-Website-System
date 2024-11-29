@@ -1,0 +1,73 @@
+body {
+    margin-top: 20px;
+    background: #f6f9fc;
+}
+
+.account-block {
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+}
+
+.account-block .overlay {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.account-block .account-testimonial {
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+}
+
+.text-theme {
+    color: darkorange !important;
+}
+
+.btn-theme {
+    background-color: darkorange;
+    border-color: orange;
+    color: #fff;
+}
+
+.btn-theme:hover {
+    background: rgba(var(--color-orange-rgb), 0.7);
+    color: #fff;
+}
+
+.corner-icon {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background: var(--color-orange);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.corner-icon i {
+    font-size: 24px;
+    color: white;
+    line-height: 0;
+}
+
+.corner-icon:hover {
+    background: rgba(var(--color-primary-rgb), 0.8);
+    color: #fff;
+}
+
